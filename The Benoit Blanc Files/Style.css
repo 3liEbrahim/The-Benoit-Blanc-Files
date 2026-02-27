@@ -1,0 +1,265 @@
+/* --- GLOBAL --- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html {
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+}
+
+body {
+    background: #1a1a1a;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+}
+
+/* --- LAYOUT ENGINE --- */
+.split-section {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    scroll-snap-align: start;
+}
+
+.side-content {
+    flex: 1;
+    padding: 8%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* --- PHOTO SLOTS --- */
+.side-image {
+    flex: 1;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #222; /* Placeholder color before image loads */
+}
+
+.hero-section {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1a1a1a; /* Dark neutral start */
+    scroll-snap-align: start;
+    text-align: center;
+    padding: 0 10%;
+}
+
+.hero-container {
+    max-width: 900px;
+}
+
+.hero-title {
+    font-family: 'Playfair Display', serif; /* Using the dramatic font for the main title */
+    font-size: clamp(3.5rem, 10vw, 8rem);
+    line-height: 0.85;
+    letter-spacing: 5px;
+    color: #ffffff;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+.hero-tagline {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.0rem;
+    letter-spacing: 4px;
+    color: #d4a373; /* Harvest Gold */
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+.hero-line {
+    width: 60px;
+    height: 2px;
+    background-color: #d4a373;
+    margin: 0 auto 30px;
+}
+
+.hero-description {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 300;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.7);
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+.scroll-indicator {
+    margin-top: 50px;
+    font-size: 0.7rem;
+    letter-spacing: 5px;
+    color: rgba(255, 255, 255, 0.3);
+    animation: bounce 2s infinite;
+}
+
+/* Subtle bounce for the scroll hint */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+    40% {transform: translateY(-10px);}
+    60% {transform: translateY(-5px);}
+}
+
+/* ADD YOUR LINKS HERE */
+.ko-img { background-image: url('knives-out.png'); }
+.go-img { background-image: url('glass-onion.png'); }
+.wudm-img { background-image: url('wake-up-dead-man.png'); }
+
+/* --- 1. KNIVES OUT (Original Poster Style) --- */
+#knives-out { 
+    background-color: #2b1d16; /* Wood Brown */
+}
+#knives-out h2 { 
+    font-family: 'Abhaya Libre', serif; /* Closest to the sharp Americana logo */
+    font-weight: 800;
+    font-size: clamp(3.5rem, 8vw, 7rem);
+    color: #d4a373; /* Harvest Gold */
+    letter-spacing: -2px;
+    line-height: 0.9;
+}
+
+/* --- 2. GLASS ONION (Modern Minimal Style) --- */
+#glass-onion { 
+    background-color: #0b1e3b; /* Navy Blue */
+    flex-direction: row-reverse;
+}
+#glass-onion h2 { 
+    font-family: 'Jost', sans-serif; /* Closest to the Futura tech-logo */
+    font-weight: 700;
+    font-size: clamp(3.5rem, 8vw, 6rem);
+    color: #f4d35e; /* Island Yellow */
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    line-height: 0.85;
+}
+
+/* --- 3. WAKE UP DEAD MAN (Gothic/Dramatic Style) --- */
+#wake-up-dead-man { 
+    background-color: #1f2124; /* Slate Grey */
+}
+#wake-up-dead-man h2 { 
+    font-family: 'Cinzel Decorative', serif; /* The sharp stone-etched look */
+    font-weight: 700;
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    line-height: 1.1;
+}
+
+/* --- TEXT ELEMENTS --- */
+.review-paragraph {
+    font-size: 1rem;
+    margin: 30px 0;
+    max-width: 480px;
+    font-weight: 300;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.8);
+}
+
+.comment-box {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.85rem;
+    padding: 20px;
+    background: rgba(0,0,0,0.3);
+    border-left: 1px solid rgba(255,255,255,0.2);
+}
+
+/* --- LETTERBOXD SECTION ROLES --- */
+
+/* Official Letterboxd Colors */
+.lb-theme {
+    background-color: #14181c !important;
+    color: #9ab !important; /* Soft grey text like the app */
+}
+
+.lb-label {
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+    color: #678;
+    text-transform: uppercase;
+}
+
+.random-reviews p {
+    font-style: italic;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    border-left: 2px solid #456;
+    padding-left: 15px;
+}
+
+/* The User Profile Card */
+.profile-card {
+    margin-top: 50px;
+    padding: 30px;
+    background: #1e2328; /* Slightly lighter grey for the card */
+    border-radius: 8px;
+    border: 1px solid #2c3440;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* PHOTO SLOT: YOUR ICON */
+.avatar-slot {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #333;
+    background-image: url('icon.jpg'); /* Put your icon link here */
+    background-size: cover;
+    margin-right: 15px;
+    border: 2px solid #00e054;
+}
+
+.user-meta h4 {
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.2rem;
+}
+
+.stars {
+    color: #00e054;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+}
+
+.final-msg {
+    color: #fff;
+    font-size: 0.95rem;
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+/* The Official Button */
+.lb-button {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #456;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+.lb-button:hover {
+    background-color: #00e054; /* Turns green on hover */
+    color: #14181c;
+}
+
+/* PHOTO SLOT: FINAL MOVIE STILL */
+.lb-final-img {
+    background-image: url('final.png'); /* Put a final movie image here */
+    background-color: #0b0d0f;
+}
